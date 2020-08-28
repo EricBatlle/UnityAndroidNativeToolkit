@@ -191,6 +191,7 @@ public class NativeToolkitFragment extends Fragment
     }
     //endregion
 
+    //region TextToSpeech
     public void Speak(String textToSpeak)
     {
         tts.Speak(textToSpeak);
@@ -211,6 +212,7 @@ public class NativeToolkitFragment extends Fragment
     {
         tts.SetLanguage(language, country);
     }
+    //endregion
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data)
@@ -220,7 +222,6 @@ public class NativeToolkitFragment extends Fragment
         if (requestCode == REQUEST_TAKE_SHOT && resultCode == RESULT_OK)
         {
             SendUnityResults(Camera.CALLBACK_CAMERA_TAKESHOT, camera.currentPhotoPath);
-            share.ShareImage("New Title", camera.currentPhotoUri.toString());
         }
         else if(requestCode == REQUEST_PICK_PHOTO && resultCode == RESULT_OK)
         {
