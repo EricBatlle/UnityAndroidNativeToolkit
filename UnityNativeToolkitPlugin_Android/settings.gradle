@@ -1,0 +1,2 @@
+include ':NativeToolkit'
+rootProject.name = "UnityNativeToolkitPlugin_Android"

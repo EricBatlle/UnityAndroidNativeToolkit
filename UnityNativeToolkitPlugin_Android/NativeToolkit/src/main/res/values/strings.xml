@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--region DIALOG-->
+    <string name="RESPONSE_DIALOG_POSITIVE">DIALOG_OK</string>
+    <string name="RESPONSE_DIALOG_NEGATIVE">DIALOG_CANCEL</string>
+    <string name="RESPONSE_DIALOG_NEUTRAL">DIALOG_NEUTRAL</string>
+
+    <string name="DIALOG_POSITIVE">OK</string>
+    <string name="DIALOG_NEGATIVE">CANCEL</string>
+    <string name="DIALOG_NEUTRAL">ASK LATER</string>
+
+
+    <string name="RESPONSE_RATEDIALOG_POSITIVE">RATEDIALOG_OK</string>
+    <string name="RESPONSE_RATEDIALOG_NEGATIVE">RATEDIALOG_CANCEL</string>
+    <string name="RESPONSE_RATEDIALOG_NEUTRAL">RATEDIALOG_NEUTRAL</string>
+
+    <string name="RATEDIALOG_POSITIVE">RATE NOW</string>
+    <string name="RATEDIALOG_NEGATIVE">NO, THANKS</string>
+    <string name="RATEDIALOG_NEUTRAL">LATER</string>
+    <!--endregion-->
+
+</resources>
