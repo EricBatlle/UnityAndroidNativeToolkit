@@ -1,6 +1,7 @@
 using System.Collections;
 using System.IO;
 using System.Text;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using static NativeToolkitPlugin;
@@ -8,24 +9,40 @@ using static NativeToolkitPlugin;
 public class NativeToolkit : MonoBehaviour, INativeToolkitPlugin
 {
     private NativeToolkitPlugin plugin = null;
-    public Button btn = null;
-    public Button btn_bot = null;
-    public Button btn_bot2 = null;
-    public Texture2D target = null;
-    public RawImage rawImage = null;
+
+    public TextMeshProUGUI resultText = null;
+    [Header("Camera/Media")]
+    public Button takeShot_btn = null;
+    public Button visualizeShot_btn = null;
+    public RawImage shotRawImg = null;
+    [Space()]
+    public Button pickPhotoFromGallery_btn = null;
+    public Button visualizeGalleryPhoto_btn = null;
+    public RawImage galleryPhotoImg = null;
+    [Space()]
+    public Toggle saveShotsOnGallery = null;
+    public Toggle saveShotsOnPrivateDirectory = null;
+    private string shotPath = "";
+    private string galleryPhotoPath = "";
 
     void Start()
     {
         plugin = NativeToolkitPlugin.GetPlatformPluginVersion(this.gameObject.name);
-        
-        btn.onClick.AddListener(() => plugin.ShareText("Title of sharing", "https://github.com/EricBatlle"));
-        btn_bot.onClick.AddListener(() => {
-            plugin.Speak("Hello Eric, either you got a missile? Can you please say something longer to check if this is working? Thanks!", "en", "US");
-        });
-        btn_bot2.onClick.AddListener(() => {
-            plugin.Speak("Hello Eric, either you got a missile? Can you please say something longer to check if this is working? Thanks!", "en", "IE");
-        });
+        //Camera/Media
+        takeShot_btn.onClick.AddListener(() => { plugin.TakeShot(); });
+        visualizeShot_btn.onClick.AddListener(() => { shotRawImg.texture = LoadPNG(shotPath); });
+        visualizeGalleryPhoto_btn.onClick.AddListener(() => { galleryPhotoImg.texture = LoadPNG(galleryPhotoPath); });
+        saveShotsOnGallery.onValueChanged.AddListener((isOn) => { plugin.SaveShotsOnGallery(isOn); });
+        saveShotsOnPrivateDirectory.onValueChanged.AddListener((isOn) => { plugin.SaveShotsOnGallery(isOn); });
+        pickPhotoFromGallery_btn.onClick.AddListener(() => { plugin.PickPhotoFromGallery(); });
+        //
     }
+
+    public void SetResultText(string result)
+    {
+        resultText.text = result;
+    }
+
     public static Texture2D LoadPNG(string filePath)
     {
         Texture2D tex = null;
@@ -49,7 +66,21 @@ public class NativeToolkit : MonoBehaviour, INativeToolkitPlugin
         Debug.Log(recognizedResult);
         //rawImage.texture = LoadPNG(recognizedResult);
     }
+
     #region FeaturesCallbacks
+    #region Camera/Media
+    public void OnShotTaken(string shotPath)
+    {
+        SetResultText("Shot taken and saved in: " + shotPath);
+        this.shotPath = shotPath;
+    }
+
+    public void OnGalleryPhotoPicked(string galleryPhotoPath)
+    {
+        SetResultText("Photo picked from: " + galleryPhotoPath);
+        this.galleryPhotoPath = galleryPhotoPath;
+    }
+    #endregion
     public void OnDialogPositive(string result)
     {
         Debug.Log(result);
@@ -74,17 +105,7 @@ public class NativeToolkit : MonoBehaviour, INativeToolkitPlugin
     {
         Debug.Log(result);
     }
-
-    public void OnShotTaken(string result)
-    {
-        Debug.Log(result);
-    }
-
-    public void OnGalleryPhotoPicked(string result)
-    {
-        Debug.Log(result);
-    }
-
+    
     public void OnRatedApp(string result)
     {
         Debug.Log(result);

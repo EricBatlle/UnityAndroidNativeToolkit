@@ -31,15 +31,15 @@ public abstract class NativeToolkitPlugin
     {
         void OnResult(string result);        
     }    
+    protected abstract void SetUp();
 
     //Features
     #region Camera/Media
     public interface INativeCamera
     {
-        void OnShotTaken(string result);
-        void OnGalleryPhotoPicked(string result);
+        void OnShotTaken(string shotPath);
+        void OnGalleryPhotoPicked(string galleryPhotoPath);
     }
-    protected abstract void SetUp();
     public abstract void TakeShot();
     public abstract void SaveShotsOnGallery(bool saveShotsOnGallery);
     public abstract void SaveShotsOnPrivateDirectory(bool saveShotsOnPrivateDirectory);
