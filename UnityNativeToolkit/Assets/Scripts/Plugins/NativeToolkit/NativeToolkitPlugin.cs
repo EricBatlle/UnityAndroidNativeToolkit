@@ -53,9 +53,9 @@ public abstract class NativeToolkitPlugin
         void OnDialogNegative(string result);
         void OnDialogNeutral(string result);
         //DatePicker
-        void OnDatePicked(string result);
+        void OnDatePicked(string year_month_day);
         //TimePicker
-        void OnTimePicked(string result);
+        void OnTimePicked(string hour_minute);
         //RateAppDialog
         void OnRatedAppPositive(string result);
         void OnRatedAppNegative(string result);
@@ -85,7 +85,7 @@ public abstract class NativeToolkitPlugin
     #region Contacts
     public interface INativeContacts
     {
-        void OnContactPicked(string result);
+        void OnContactPicked(string name_number_id);
     }
     public abstract void PickContact();
     #endregion

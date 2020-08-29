@@ -10,7 +10,10 @@ public class NativeToolkit : MonoBehaviour, INativeToolkitPlugin
 {
     private NativeToolkitPlugin plugin = null;
 
+    #region Variables
+    [Header("Result")]
     public TextMeshProUGUI resultText = null;
+
     [Header("Camera/Media")]
     public Button takeShot_btn = null;
     public Button visualizeShot_btn = null;
@@ -25,6 +28,42 @@ public class NativeToolkit : MonoBehaviour, INativeToolkitPlugin
     private string shotPath = "";
     private string galleryPhotoPath = "";
 
+    [Header("Dialogs")]
+    public Button showAlertDialog_btn = null;
+    public TMP_InputField dialogMessage = null;
+    public TMP_InputField dialogTitle = null;
+    public Toggle hasPositiveButton = null;
+    public Toggle hasNegativeButton = null;
+    public Toggle hasNeutralButton = null;
+    [Space()]
+    public Button showDatePickerDialog_btn = null;
+    public Button showTimePickerDialog_btn = null;
+    public Button showRateAppDialog_btn = null;
+
+    [Header("Toast")]
+    public Button showToast_btn = null;
+    public TMP_InputField toastMessage = null;
+
+    [Header("Contacts")]
+    public Button pickContact_btn = null;
+
+    [Header("Sharing")]
+    public Button shareText_btn = null;
+    public Button shareShot_btn = null;
+    public TMP_InputField sharingTitle = null;
+    public TMP_InputField textToShare = null;
+
+    [Header("SpeechRecognizer")]
+    public Button startListening_btn = null;
+    public Toggle setContinousListening = null;
+
+    [Header("TextToSpeech")]
+    public Button speak_btn = null;
+    public TMP_InputField textToSpeak = null;
+    public TMP_InputField language = null;
+    public TMP_InputField country = null;
+    #endregion
+
     void Start()
     {
         plugin = NativeToolkitPlugin.GetPlatformPluginVersion(this.gameObject.name);
@@ -35,14 +74,27 @@ public class NativeToolkit : MonoBehaviour, INativeToolkitPlugin
         saveShotsOnGallery.onValueChanged.AddListener((isOn) => { plugin.SaveShotsOnGallery(isOn); });
         saveShotsOnPrivateDirectory.onValueChanged.AddListener((isOn) => { plugin.SaveShotsOnGallery(isOn); });
         pickPhotoFromGallery_btn.onClick.AddListener(() => { plugin.PickPhotoFromGallery(); });
-        //
+        //Dialogs
+        showAlertDialog_btn.onClick.AddListener(() => { plugin.ShowAlertDialog(dialogMessage.text, dialogTitle.text, hasPositiveButton.isOn, hasNegativeButton.isOn, hasNeutralButton.isOn); });
+        showDatePickerDialog_btn.onClick.AddListener(() => { plugin.ShowDatePickerDialog(); });
+        showTimePickerDialog_btn.onClick.AddListener(() => { plugin.ShowTimePickerDialog(); });
+        showRateAppDialog_btn.onClick.AddListener(() => { plugin.ShowRateAppDialog(dialogMessage.text, dialogTitle.text); });
+        //Toast
+        showToast_btn.onClick.AddListener(() => { plugin.ShowToast(toastMessage.text); });
+        //Contacts
+        pickContact_btn.onClick.AddListener(() => { plugin.PickContact(); });
+        //Sharing
+        shareText_btn.onClick.AddListener(() => { plugin.ShareText(sharingTitle.text, textToShare.text); });
+        shareShot_btn.onClick.AddListener(() => { plugin.ShareImage(sharingTitle.text, shotPath); });
+        //SpeechRecognizer
+        startListening_btn.onClick.AddListener(() => { plugin.StartListening(); });
+        setContinousListening.onValueChanged.AddListener((isOn) => { plugin.SetContinuousListening(isOn); });
     }
 
     public void SetResultText(string result)
     {
         resultText.text = result;
     }
-
     public static Texture2D LoadPNG(string filePath)
     {
         Texture2D tex = null;
@@ -81,69 +133,78 @@ public class NativeToolkit : MonoBehaviour, INativeToolkitPlugin
         this.galleryPhotoPath = galleryPhotoPath;
     }
     #endregion
+    
+    #region Dialogs
     public void OnDialogPositive(string result)
     {
-        Debug.Log(result);
+        SetResultText("On Dialog:" + result);
     }
 
     public void OnDialogNegative(string result)
     {
-        Debug.Log(result);
+        SetResultText("On Dialog:" + result);
     }
 
     public void OnDialogNeutral(string result)
     {
-        Debug.Log(result);
+        SetResultText("On Dialog:" + result);
     }
 
-    public void OnDatePicked(string result)
+    public void OnDatePicked(string year_month_day)
     {
-        Debug.Log(result);
+        SetResultText("Year~Month~Day:" + year_month_day);
     }
 
-    public void OnTimePicked(string result)
+    public void OnTimePicked(string hour_minute)
     {
-        Debug.Log(result);
+        SetResultText("Hour~Minute:" + hour_minute);
     }
-    
+
     public void OnRatedApp(string result)
     {
-        Debug.Log(result);
+        SetResultText("On Rated App:" + result);
     }
 
     public void OnRatedAppPositive(string result)
     {
-        Debug.Log(result);
+        SetResultText("On Rated App:" + result);
     }
 
     public void OnRatedAppNegative(string result)
     {
-        Debug.Log(result);
+        SetResultText("On Rated App:" + result);
     }
 
     public void OnRatedAppNeutral(string result)
     {
-        Debug.Log(result);
+        SetResultText("On Rated App:" + result);
     }
+    #endregion
 
-    public void OnContactPicked(string result)
+    #region Contacts
+    public void OnContactPicked(string name_number_id)
     {
-        Debug.Log(result);
+        SetResultText("Name~Number~Id:" + name_number_id);
     }
+    #endregion
 
+    #region SpeechRecognizer
     public void OnSpeechReconized(string recognizedResults)
     {
-        Debug.Log(recognizedResults);
+        SetResultText(recognizedResults);
     }
+    #endregion
 
+    #region SpeechToText
     public void OnSpeechStart(string result)
     {
-        Debug.Log(result);
+        SetResultText(result);
     }
 
     public void OnSpeechDone(string result)
     {
-        Debug.Log(result);
+        SetResultText(result);
     }
+    #endregion
     #endregion
 }
