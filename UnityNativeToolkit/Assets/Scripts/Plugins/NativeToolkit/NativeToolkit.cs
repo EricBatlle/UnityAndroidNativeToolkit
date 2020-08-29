@@ -89,6 +89,8 @@ public class NativeToolkit : MonoBehaviour, INativeToolkitPlugin
         //SpeechRecognizer
         startListening_btn.onClick.AddListener(() => { plugin.StartListening(); });
         setContinousListening.onValueChanged.AddListener((isOn) => { plugin.SetContinuousListening(isOn); });
+        //SpeechToText
+        speak_btn.onClick.AddListener(() => { plugin.Speak(textToSpeak.text, language.text, country.text); });
     }
 
     public void SetResultText(string result)
