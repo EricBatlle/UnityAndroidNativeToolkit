@@ -44,7 +44,6 @@ App Functionality is simple, just press the feature button you want to test. Som
 
 
 On code side, the only thing to keep in mind is to make a Script (like ``NativeToolkit.cs`` in the example) that have a reference to ``NativeToolkitPlugin`` and initialize the plugin doing: 
-
 ``pluginReferenceVariable = NativeToolkitPlugin.GetPlatformPluginVersion(this.gameObject.name);``
 
 From here you can call all plugin features simply calling ``pluginReferenceVariable.`` and the feature you want, like ``pluginReferenceVariable.TakeShot()``.
