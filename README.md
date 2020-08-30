@@ -11,7 +11,7 @@ This repository is divided in 2 parts:
 ## Example 🎬
 
 <p>
-  <img src="UnityNativeToolkitImg.png" alt="simple video gif" width="246" height="512"/>
+  <img src="UnityNativeToolkitImg.PNG" alt="simple video gif" width="246" height="512"/>
 </p>
 
 *This image shows all UnityAndroidNativeToolkit features UI.*
