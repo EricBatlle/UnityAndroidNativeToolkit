@@ -37,13 +37,13 @@ If you want to open the project and check the code, you need to have **Unity** a
 If you want to scratch the code:
 
 - To check **Unity** project, **open the project**, select **NativeToolkit** scene.
-Either inside the unity project or simply dragging the **.cs** classes on your editor, you have to watch on to the classes located on ``UnityAndroidNativeToolkit/Assets/Scripts``. 
+Either inside the unity project or simply dragging the **.cs** classes on your editor, you have to watch the classes located on ``UnityNativeToolkit/Assets/Scripts``. 
 - To check **Android Plugin** you can do it opening the solution with **AndroidStudio** and checking the classes located in ``UnityNativeToolkitPlugin_Android\NativeToolkit\src\main\java\com\eric\nativetoolkit``.
 
 App Functionality is simple, just press the feature button you want to test. Some features like Dialogs also have toggles to specify some parameters.
 
 
-On code side, the only thing to keep in mind is to make a Script (like ``NativeToolkit.cs`` in the example) that have a reference to ``NativeToolkitPlugin`` and initialize the plugin doing: 
+On code side, the only thing to keep in mind is to make a Script (like ``NativeToolkit.cs`` in the example) that has a reference to ``NativeToolkitPlugin`` and initialize the plugin doing: 
 ```csharp
 pluginReferenceVariable = NativeToolkitPlugin.GetPlatformPluginVersion(this.gameObject.name);
 ```
