@@ -6,118 +6,118 @@ public class NativeToolkitPlugin_Editor : NativeToolkitPlugin
 
     protected override void SetUp()
     {
-        Debug.LogWarning(" <b> WARNING </b>: You are running this plugin on Editor mode. Real recognition only works running on mobile device.");
+        Debug.LogWarning(" <b> WARNING </b>: You are running this plugin on Editor mode. Real plugin only works running on mobile device.");
     }
 
     #region Features
     public override void SaveShotsOnGallery(bool saveShotsOnGallery)
     {
-        throw new System.NotImplementedException();
+        Debug.LogWarning(" <b> WARNING </b>: You are trying one feature of the plugin on Editor mode. Real features only work running on mobile device.");
     }
 
     public override void SaveShotsOnPrivateDirectory(bool saveShotsOnPrivateDirectory)
     {
-        throw new System.NotImplementedException();
+        Debug.LogWarning(" <b> WARNING </b>: You are trying one feature of the plugin on Editor mode. Real features only work running on mobile device.");
     }
 
     public override void TakeShot()
     {
-        throw new System.NotImplementedException();
+        Debug.LogWarning(" <b> WARNING </b>: You are trying one feature of the plugin on Editor mode. Real features only work running on mobile device.");
     }
 
     public override void PickPhotoFromGallery()
     {
-        throw new System.NotImplementedException();
+        Debug.LogWarning(" <b> WARNING </b>: You are trying one feature of the plugin on Editor mode. Real features only work running on mobile device.");
     }
 
     public override void ShowAlertDialog(string message, string title)
     {
-        throw new System.NotImplementedException();
+        Debug.LogWarning(" <b> WARNING </b>: You are trying one feature of the plugin on Editor mode. Real features only work running on mobile device.");
     }
 
     public override void ShowAlertDialog(string message, string title, bool hasPositiveButton, bool hasNegativeButton, bool hasNeutralButton)
     {
-        throw new System.NotImplementedException();
+        Debug.LogWarning(" <b> WARNING </b>: You are trying one feature of the plugin on Editor mode. Real features only work running on mobile device.");
     }
 
     public override void ShowDatePickerDialog()
     {
-        throw new System.NotImplementedException();
+        Debug.LogWarning(" <b> WARNING </b>: You are trying one feature of the plugin on Editor mode. Real features only work running on mobile device.");
     }
 
     public override void ShowTimePickerDialog()
     {
-        throw new System.NotImplementedException();
+        Debug.LogWarning(" <b> WARNING </b>: You are trying one feature of the plugin on Editor mode. Real features only work running on mobile device.");
     }
 
     public override void ShowRateAppDialog(string message, string title)
     {
-        throw new System.NotImplementedException();
+        Debug.LogWarning(" <b> WARNING </b>: You are trying one feature of the plugin on Editor mode. Real features only work running on mobile device.");
     }
 
     public override void ShowToast(string message, int duration, int gravity, int xOffset, int yOffset)
     {
-        throw new System.NotImplementedException();
+        Debug.LogWarning(" <b> WARNING </b>: You are trying one feature of the plugin on Editor mode. Real features only work running on mobile device.");
     }
 
     public override void ShowToast(string message)
     {
-        throw new System.NotImplementedException();
+        Debug.LogWarning(" <b> WARNING </b>: You are trying one feature of the plugin on Editor mode. Real features only work running on mobile device.");
     }
 
     public override void ShowToast(string message, int duration)
     {
-        throw new System.NotImplementedException();
+        Debug.LogWarning(" <b> WARNING </b>: You are trying one feature of the plugin on Editor mode. Real features only work running on mobile device.");
     }
 
     public override void PickContact()
     {
-        throw new System.NotImplementedException();
+        Debug.LogWarning(" <b> WARNING </b>: You are trying one feature of the plugin on Editor mode. Real features only work running on mobile device.");
     }
-    
+
     public override void ShareText(string title, string content)
     {
-        throw new System.NotImplementedException();
+        Debug.LogWarning(" <b> WARNING </b>: You are trying one feature of the plugin on Editor mode. Real features only work running on mobile device.");
     }
 
     public override void ShareImage(string title, string uriContentString)
     {
-        throw new System.NotImplementedException();
+        Debug.LogWarning(" <b> WARNING </b>: You are trying one feature of the plugin on Editor mode. Real features only work running on mobile device.");
     }
 
     public override void StartListening()
     {
-        throw new System.NotImplementedException();
+        Debug.LogWarning(" <b> WARNING </b>: You are trying one feature of the plugin on Editor mode. Real features only work running on mobile device.");
     }
 
     public override void SetContinuousListening(bool isContinuous)
     {
-        throw new System.NotImplementedException();
+        Debug.LogWarning(" <b> WARNING </b>: You are trying one feature of the plugin on Editor mode. Real features only work running on mobile device.");
     }
 
     public override void Speak(string textToSpeak)
     {
-        throw new System.NotImplementedException();
+        Debug.LogWarning(" <b> WARNING </b>: You are trying one feature of the plugin on Editor mode. Real features only work running on mobile device.");
     }
 
     public override void SetLanguage(string language)
     {
-        throw new System.NotImplementedException();
+        Debug.LogWarning(" <b> WARNING </b>: You are trying one feature of the plugin on Editor mode. Real features only work running on mobile device.");
     }
 
     public override void SetLanguage(string language, string country)
     {
-        throw new System.NotImplementedException();
+        Debug.LogWarning(" <b> WARNING </b>: You are trying one feature of the plugin on Editor mode. Real features only work running on mobile device.");
     }
 
     public override void Speak(string textToSpeak, string language)
     {
-        throw new System.NotImplementedException();
+        Debug.LogWarning(" <b> WARNING </b>: You are trying one feature of the plugin on Editor mode. Real features only work running on mobile device.");
     }
 
     public override void Speak(string textToSpeak, string language, string country)
     {
-        throw new System.NotImplementedException();
+        Debug.LogWarning(" <b> WARNING </b>: You are trying one feature of the plugin on Editor mode. Real features only work running on mobile device.");
     }
     #endregion
 }

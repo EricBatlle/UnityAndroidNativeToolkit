@@ -977,7 +977,7 @@ RectTransform:
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.11324934}
-  m_AnchorMax: {x: 1, y: 0.19938798}
+  m_AnchorMax: {x: 1, y: 0.19749488}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2770,7 +2770,7 @@ RectTransform:
   m_Father: {fileID: 1980027726}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.72495353}
+  m_AnchorMin: {x: 0, y: 0.66271484}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
@@ -2841,7 +2841,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -2862,7 +2862,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 0.6057663}
   m_textInfo:
     textComponent: {fileID: 623333397}
     characterCount: 8
@@ -3375,7 +3375,18 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 65225236}
+        m_MethodName: SetResultText
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Changed Continuous Listening mode
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!1 &701257301
 GameObject:
@@ -6653,7 +6664,7 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.72495353}
+  m_AnchorMax: {x: 1, y: 0.66271484}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6678,7 +6689,7 @@ MonoBehaviour:
   fitType: 2
   rows: 2
   columns: 1
-  cellSize: {x: 360, y: 24.038101}
+  cellSize: {x: 360, y: 22.57658}
   spacing: {x: 0, y: 0}
   fitX: 1
   fitY: 1
@@ -6870,7 +6881,7 @@ MonoBehaviour:
   fitType: 3
   rows: 1
   columns: 3
-  cellSize: {x: 120, y: 24.038101}
+  cellSize: {x: 120, y: 22.57658}
   spacing: {x: 0, y: 0}
   fitX: 1
   fitY: 1
@@ -11551,7 +11562,7 @@ RectTransform:
   m_Father: {fileID: 33280479}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.20729524}
+  m_AnchorMin: {x: 0, y: 0.20445558}
   m_AnchorMax: {x: 1, y: 0.31091437}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
